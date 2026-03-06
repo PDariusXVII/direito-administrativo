@@ -3,25 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plataforma Jurídica Pro</title>
-<!-- Fonte Inter e Syne -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-<!-- Ícones Phosphor (Profissionais) -->
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<title>Plataforma Jurídica</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <!-- TOP BAR -->
 <div class="topbar">
-  <div class="logo">
-    <i class="ph ph-scale"></i> 
-    <span>Plataforma</span>Jurídica
-  </div>
+  <div class="logo">⚖️ <span>Plataforma</span>Jurídica</div>
   <div class="topbar-right">
-    <div class="progress-chip" id="top-prog">
-      <i class="ph ph-check-circle"></i> 0 / 12 tópicos
-    </div>
+    <div class="progress-chip" id="top-prog">0 / 12 tópicos</div>
   </div>
 </div>
 
@@ -34,14 +26,11 @@
       <p>Matéria</p>
       <h3>Direito Administrativo</h3>
     </div>
-    <div class="search-wrapper">
-      <i class="ph ph-magnifying-glass"></i>
-      <input class="sidebar-search" id="search-input" placeholder="Buscar tópico..." oninput="filterTopics()">
-    </div>
+    <input class="sidebar-search" id="search-input" placeholder="🔍 Buscar tópico..." oninput="filterTopics()">
     <div class="sidebar-list" id="sidebar-list"></div>
     <div class="sidebar-prog">
       <div class="prog-label">
-        <span>Progresso Geral</span>
+        <span>Progresso</span>
         <span id="prog-pct">0%</span>
       </div>
       <div class="prog-bar"><div class="prog-fill" id="sidebar-prog-fill" style="width:0%"></div></div>
@@ -51,25 +40,15 @@
   <!-- MAIN -->
   <div class="main">
     <div class="tabbar" id="tabbar">
-      <div class="tab active" data-tab="aprender" onclick="switchTab('aprender')">
-        <i class="ph ph-book-open-text"></i> Aprender
-      </div>
-      <div class="tab" data-tab="mapa" onclick="switchTab('mapa')">
-        <i class="ph ph-brain"></i> Mapa Mental
-      </div>
-      <div class="tab" data-tab="flashcards" onclick="switchTab('flashcards')">
-        <i class="ph ph-identification-card"></i> Flashcards
-      </div>
-      <div class="tab" data-tab="quiz" onclick="switchTab('quiz')">
-        <i class="ph ph-clipboard-text"></i> Concurso
-      </div>
-      <div class="tab" data-tab="progresso" onclick="switchTab('progresso')">
-        <i class="ph ph-chart-bar"></i> Progresso
-      </div>
+      <div class="tab active" data-tab="aprender" onclick="switchTab('aprender')">📚 Aprender</div>
+      <div class="tab" data-tab="mapa" onclick="switchTab('mapa')">🧠 Mapa Mental</div>
+      <div class="tab" data-tab="flashcards" onclick="switchTab('flashcards')">🃏 Flashcards</div>
+      <div class="tab" data-tab="quiz" onclick="switchTab('quiz')">📝 Concurso</div>
+      <div class="tab" data-tab="progresso" onclick="switchTab('progresso')">📊 Progresso</div>
     </div>
     <div class="view-area" id="view-area">
       <div class="empty">
-        <div class="e-icon"><i class="ph ph-scale"></i></div>
+        <div class="e-icon">⚖️</div>
         <p>Selecione um tópico na barra lateral para começar</p>
       </div>
     </div>
@@ -85,6 +64,5 @@
 <script src="components/sidebar.js"></script>
 <script src="components/topicoView.js"></script>
 <script src="app.js"></script>
-<script src="script.js"></script>
 </body>
 </html>
