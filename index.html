@@ -1,68 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plataforma Jurídica</title>
+<title>Mapa de Estudos - Concursos</title>
+
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="logo">⚖️ <span>Plataforma</span>Jurídica</div>
-  <div class="topbar-right">
-    <div class="progress-chip" id="top-prog">0 / 12 tópicos</div>
-  </div>
+<div class="app">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo">
+📚 Estudo IA
 </div>
 
-<!-- WORKSPACE -->
-<div class="workspace">
+<input 
+id="search-input"
+placeholder="Buscar tópico..."
+oninput="filterTopics()"
+/>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-    <div class="sidebar-head">
-      <p>Matéria</p>
-      <h3>Direito Administrativo</h3>
-    </div>
-    <input class="sidebar-search" id="search-input" placeholder="🔍 Buscar tópico..." oninput="filterTopics()">
-    <div class="sidebar-list" id="sidebar-list"></div>
-    <div class="sidebar-prog">
-      <div class="prog-label">
-        <span>Progresso</span>
-        <span id="prog-pct">0%</span>
-      </div>
-      <div class="prog-bar"><div class="prog-fill" id="sidebar-prog-fill" style="width:0%"></div></div>
-    </div>
-  </div>
+<div id="sidebar-list"></div>
 
-  <!-- MAIN -->
-  <div class="main">
-    <div class="tabbar" id="tabbar">
-      <div class="tab active" data-tab="aprender" onclick="switchTab('aprender')">📚 Aprender</div>
-      <div class="tab" data-tab="mapa" onclick="switchTab('mapa')">🧠 Mapa Mental</div>
-      <div class="tab" data-tab="flashcards" onclick="switchTab('flashcards')">🃏 Flashcards</div>
-      <div class="tab" data-tab="quiz" onclick="switchTab('quiz')">📝 Concurso</div>
-      <div class="tab" data-tab="progresso" onclick="switchTab('progresso')">📊 Progresso</div>
-    </div>
-    <div class="view-area" id="view-area">
-      <div class="empty">
-        <div class="e-icon">⚖️</div>
-        <p>Selecione um tópico na barra lateral para começar</p>
-      </div>
-    </div>
-  </div>
+<div class="sidebar-progress">
+<div id="sidebar-prog-fill"></div>
 </div>
 
-<div class="map-tooltip" id="map-tooltip"></div>
+<div id="prog-pct">0%</div>
 
-<!-- SCRIPTS -->
+</div>
+
+
+<!-- CONTEÚDO -->
+
+<div class="content">
+
+<div class="tabs">
+
+<button onclick="switchTab('aprender')">Aprender</button>
+<button onclick="switchTab('mapa')">Mapa Mental</button>
+<button onclick="switchTab('flashcards')">Flashcards</button>
+<button onclick="switchTab('quiz')">Quiz</button>
+
+</div>
+
+<div id="view-area"></div>
+
+</div>
+
+</div>
+
+
+<div id="map-tooltip"></div>
+
+
 <script src="data/direito-administrativo.js"></script>
+
 <script src="modules/mapaMental.js"></script>
 <script src="modules/flashcards.js"></script>
+<script src="modules/quiz.js"></script>
+
 <script src="components/sidebar.js"></script>
 <script src="components/topicoView.js"></script>
-<script src="app.js"></script>
+
+<script src="main.js"></script>
+
 </body>
 </html>
